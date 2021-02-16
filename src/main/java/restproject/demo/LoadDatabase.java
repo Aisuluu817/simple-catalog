@@ -16,6 +16,7 @@ public class LoadDatabase {
             repository.save(new Product("apple", 45, "kg"));
             repository.save(new Product("banana", 60, "kg"));
             repository.save(new Product("milk", 40,     "litres"));
+            repository.save(new Product("juice", 90, "litres"));
 
         };
     }
