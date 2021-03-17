@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www/.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>"Result</title>
 </head>
 <body>
-$END$
+
+     <h2>Result:</h2>
+    <p th:text="${product.id}"></p>
+        <p th:text="${product.name}"></p>
+        <p th:text="${product.price}"></p>
+        <p th:text="${product.measureUnit}"></p>
+        <a href="/products"> show all products</a>
+        <a href="/add" methods="post"> add new product</a>
 </body>
 </html>

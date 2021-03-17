@@ -24,6 +24,7 @@ public class ProductController {
     Product newProduct(@RequestBody Product newProd){
         return repository.save(newProd);
     }
+
     @PutMapping("/products/{id}")
     Product update(@RequestBody Product replaceProduct, @PathVariable Long id){
         return repository.findById(id).map(product -> {
