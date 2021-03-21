@@ -1,10 +1,9 @@
 package restproject.demo.product;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "products_1")
 public class Product {
     private @Id @GeneratedValue Long id;
     private String name;
