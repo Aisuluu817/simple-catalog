@@ -1,10 +1,11 @@
-package restproject.demo;
+package restproject.demo.product;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import restproject.demo.ProductNotFoundException;
+import restproject.demo.ProductRepository;
 
 @RestController
+@RequestMapping(path="api/v1/products")
 public class ProductController {
     private final ProductRepository repository;
 
@@ -12,20 +13,21 @@ public class ProductController {
         this.repository = repository;
     }
 
-    @GetMapping("/products")
-    List<Product> all() {
+    @GetMapping
+    Iterable<Product> all() {
             return repository.findAll();
     }
-    @GetMapping("/products/{id}")
+
+    @GetMapping("/{id}")
     Product product(@PathVariable Long id){
         return repository.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
     }
-    @PostMapping("/products")
+    @PostMapping
     Product newProduct(@RequestBody Product newProd){
         return repository.save(newProd);
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/{id}")
     Product update(@RequestBody Product replaceProduct, @PathVariable Long id){
         return repository.findById(id).map(product -> {
             product.setName(replaceProduct.getName());
@@ -36,12 +38,12 @@ public class ProductController {
         return repository.save(replaceProduct);});
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/{id}")
     String message(@PathVariable Long id){
            repository.deleteById(id);
            return "Product deleted from the database";
     }
-    @DeleteMapping("/products")
+    @DeleteMapping
     String message(){
         repository.deleteAll();
         return "All products deleted";

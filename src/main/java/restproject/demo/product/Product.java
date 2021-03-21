@@ -1,4 +1,4 @@
-package restproject.demo;
+package restproject.demo.product;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

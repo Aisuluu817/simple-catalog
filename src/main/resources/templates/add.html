@@ -1,17 +1,67 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-<head>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{fragments/main_layout}">
     <meta charset="UTF-8">
     <title>Products</title>
 </head>
 <body>
-<form action="#" th:action="@{/add}"  method="post" th:object="${product}">
-    <input type="text" th:field = "*{id}">
-    <input type="text" th:field = "*{name}">
-    <input type="text" th:field = "*{price}">
-    <input type="text" th:field = "*{measureUnit}">
-    <input type="submit" value ="Add product">
-</form>
+<!--<form action="#" th:action="@{/api/v1/products/add}"  method="post" th:object="${product}">-->
+<!--    <input type="text" th:field = "*{id}">-->
+<!--    <input type="text" th:field = "*{name}">-->
+<!--    <input type="text" th:field = "*{price}">-->
+<!--    <input type="text" th:field = "*{measureUnit}">-->
+<!--    <input type="submit" value ="Add product">-->
+<!--</form>-->
+<div layout:fragment="content" class="container mySpace">
+
+    </div>
+    <form method="post" th:action="@{api/v1/products/add}">
+        <div class="form-group">
+            <label for="name" class="form-control-label">Name</label>
+            <input type="text" class="form-control"  id="name" name="product Name" />
+
+        </div>
+        <div class="form-group">
+            <label for="price" class="form-control-label">Price</label> <input
+                type="price" class="form-control"
+                id="price"  name="price"/>
+        </div>
+
+        <div class="form-group">
+            <label for="measureUnit" class="form-control-label">MeasureUnit</label> <input
+                type="price" class="form-control"
+                id="measureUnit"  name="measureUnit"/>
+        </div>
+
+
+        <input type="submit" value="add product" class="btn btn-primary" />
+
+    </form>
+</div>
+<div layout:fragment="content" class="container mySpace">
+    <div class="alert alert-danger" th:if="${param.error}">
+
+        <h2>Invalid Email or Password</h2>
+    </div>
+    <form method="post" th:action="@{/add}">
+
+        <div class="form-group">
+            <label for="email" class="form-control-label">Email</label> <input
+                type="text" class="form-control"  id="email" name="username" />
+
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-control-label">Password</label> <input
+                type="password" class="form-control"
+                id="password"  name="password"/>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary" />
+
+    </form>
+</div>
 
 </body>
 </html>
