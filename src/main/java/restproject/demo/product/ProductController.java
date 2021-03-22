@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import restproject.demo.ProductNotFoundException;
 import restproject.demo.ProductRepository;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path="api/v1/products")
 public class ProductController {
