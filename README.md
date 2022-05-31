@@ -1,5 +1,5 @@
 ## simple-catalog
-## cs209-final
+## Computer Oraganization & Architecture course final
 # Project description:
   The project is about products catalog, that we can add/update/delete
   
@@ -8,7 +8,7 @@
 ## Feature list:
  - java + Spring boot framework
  
- - work with database (PostgreSQL)
+ - work with database (MySql)
  
  - Rest API
  
