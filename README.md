@@ -1,4 +1,4 @@
-## simple-catalog
+## simple-catalog by Aisuluu Arstanbaeva and Zhibek Mukhtarbekova com-19
 ## Computer Oraganization & Architecture course final
 # Project description:
   The project is about products catalog, that we can add/update/delete
