@@ -1,6 +1,6 @@
 ## simple-catalog by 
 Aisuluu Arstanbaeva com-19
-## Frontend midterm 
+## Frontend final
 # Project description:
   The project is about products catalog, that we can add/update/delete
   
